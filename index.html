@@ -86,7 +86,7 @@
                                         główna</a>
                                 </li>
                                 <li class="nav-item m-1">
-                                    <a class="nav-link active" data-page="o_nas" href="">O nas</a>
+                                    <a class="nav-link active" data-page="o_nas" href="#">O nas</a>
                                 </li>
                                 <li class="nav-item m-1">
                                     <a class="nav-link" data-page="aktualnosci">Aktualności</a>
@@ -131,7 +131,7 @@
                 $("#content").addClass('fade-out');
 
                 setTimeout(function () {
-                    $.get("data_page_content/" + page + ".html", function (data) {
+                    $.get("/data_page_content/" + page + ".html", function (data) {
                         $("#content").html(data);
                         $("#content").removeClass('fade-out');
                     });
