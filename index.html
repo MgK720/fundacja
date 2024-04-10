@@ -131,7 +131,7 @@
                 $("#content").addClass('fade-out');
 
                 setTimeout(function () {
-                    $.get("/data_page_content/" + page + ".html", function (data) {
+                    $.get("data_page_content/" + page + ".html", function (data) {
                         $("#content").html(data);
                         $("#content").removeClass('fade-out');
                     });
