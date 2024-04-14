@@ -1,19 +1,20 @@
 <div class="container-fluid text-center">
     <div class="row mt-1">
         <div class="col justify-content-center">
-            <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+            <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel" data-bs-pause="false"
+                data-bs-interval="3000">
                 <div class="carousel-inner">
                     <div class="carousel-item active">
                         <img src="https://images.unsplash.com/photo-1513159446162-54eb8bdaa79b?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                            class="d-block w-100" alt="blabla">
+                            class="d-block w-100" alt="blabla" loading="lazy">
                     </div>
                     <div class="carousel-item">
                         <img src="https://images.unsplash.com/photo-1552641156-93ea2a5f78e2?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                            class="d-block w-100" alt="...">
+                            class="d-block w-100" alt="..." loading="lazy">
                     </div>
                     <div class="carousel-item">
                         <img src="https://images.unsplash.com/photo-1627752885954-e6956866dcbf?q=80&w=2671&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                            class="d-block w-100" alt="...">
+                            class="d-block w-100" alt="..." loading="lazy">
                     </div>
                 </div>
                 <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
@@ -181,7 +182,7 @@
                                 <a href="https://www.facebook.com/zdazyczpomoca/?locale=pl_PL">
                                     <img src="images/wspolprace/wsp1.jpg" class="img-fluid rounded-img-image w-100"
                                         alt="wsplopraca_nazwa_alt"
-                                        href="https://www.facebook.com/zdazyczpomoca/?locale=pl_PL">
+                                        href="https://www.facebook.com/zdazyczpomoca/?locale=pl_PL" loading="lazy">
                                 </a>
                             </div>
                         </div>
@@ -196,6 +197,7 @@
         }
 
 
+        /* problem z ipad pro - pomyslec czy tego nie zmienic na 1024 breakpoint */
         @media (min-width: 991.98px) {
             .carousel-item img {
                 height: 100%;
@@ -235,3 +237,6 @@
             margin: 0 0;
         }
     </style>
+    <script>
+        $('#carouselExampleIndicators').carousel();
+    </script>
