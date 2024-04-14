@@ -46,6 +46,7 @@
                 </div>
                 <div class="modal-body">
                     <!-- <embed id="statut-pdf" src="assets/statut_dummy.pdf#toolbar=0" width="100%" height="1000" /> -->
+                    <!-- jesli i tak bedziemy chcieli to wyswietlac na stronie to: pdf to html konwerter i wkleić tutaj -->
                     <object data="assets/statut_dummy.pdf#toolbar=0" type="application/pdf" width="100%" height="1000"
                         aria-labelledby="PDF document" id="statut-pdf">
                         <p>
@@ -53,6 +54,7 @@
                             <a href="assets/statut_dummy.pdf">Pobierz statut</a>
                         </p>
                     </object>
+
                 </div>
             </div>
         </div>
@@ -93,6 +95,11 @@
 </div>
 </div>
 <style>
+    #statut-modal button:focus {
+        box-shadow: none;
+        border: 1px solid lightgray;
+    }
+
     #owners_o_nas_container {
         height: 40vh;
         width: 1500px;

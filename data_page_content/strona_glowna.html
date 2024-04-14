@@ -194,10 +194,22 @@
         </div>
     </div>
     <style>
+        .accordion-button:focus {
+            box-shadow: none;
+        }
+
+        .accordion-button:not(.collapsed) {
+            background-color: lightgray;
+            color: black;
+        }
+
+        .accordion-button {
+            color: #525252;
+        }
+
         .carousel-inner {
             height: 40vh;
         }
-
 
         /* problem z ipad pro - pomyslec czy tego nie zmienic na 1024 breakpoint */
         @media (min-width: 991.98px) {
@@ -217,6 +229,7 @@
                 margin-top: 0.75em;
             }
         }
+
 
         .rounded-img {
             height: 100px;
