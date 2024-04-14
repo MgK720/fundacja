@@ -32,17 +32,76 @@
                 corporis nobis veritatis, iusto possimus molestiae quisquam facere numquam ab quibusdam aut officiis
                 commodi repellat id?
             </p>
+            <button type="button" class="btn btn-outline-warning btn-lg" data-bs-toggle="modal"
+                data-bs-target="#statut-modal"><strong>Zobacz nasz statut</strong></button>
             <hr>
         </div>
     </div>
+    <div class="modal fade" id="statut-modal" tabindex="-1" aria-labelledby="statut-modal-label" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Statut fundacji blabla</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <embed id="statut-pdf" src="assets/statut_dummy.pdf#toolbar=0" width="100%" height="1000" />
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row ml-3 mr-3">
+        <div class="col col-lg-9 mx-auto mt-4">
+            <div class="row">
+                <div class="col-12 col-lg-4 mx-auto">
+                    <div class="rounded-img">
+                        <a href="https://www.facebook.com/zdazyczpomoca/?locale=pl_PL">
+                            <img src="images/wspolprace/wsp1.jpg" class="img-fluid rounded-img-image w-100"
+                                alt="wsplopraca_nazwa_alt" href="https://www.facebook.com/zdazyczpomoca/?locale=pl_PL"
+                                loading="lazy">
+                        </a>
+                    </div>
+                    <p class="mt-1 mb-0"><strong>Andrzej Tomaszewski</strong></p>
+                    <p><small>Prezes</small></p>
+                </div>
+                <div class="col-12 col-lg-4 mx-auto">
+                    <div class="rounded-img">
+                        <a href="https://www.facebook.com/zdazyczpomoca/?locale=pl_PL">
+                            <img src="images/wspolprace/wsp1.jpg" class="img-fluid rounded-img-image w-100"
+                                alt="wsplopraca_nazwa_alt" href="https://www.facebook.com/zdazyczpomoca/?locale=pl_PL"
+                                loading="lazy">
+                        </a>
+                    </div>
+                    <p class="mt-1 mb-0"><strong>Tomasz Polak</strong></p>
+                    <p><small>Zastępca prezesa</small></p>
+                </div>
+                <div class="col-12 col-lg-4 mx-auto">
+                    <div class="rounded-img">
+                        <a href="https://www.facebook.com/zdazyczpomoca/?locale=pl_PL">
+                            <img src="images/wspolprace/wsp1.jpg" class="img-fluid rounded-img-image w-100"
+                                alt="wsplopraca_nazwa_alt" href="https://www.facebook.com/zdazyczpomoca/?locale=pl_PL"
+                                loading="lazy">
+                        </a>
+                    </div>
+                    <p class="mt-1 mb-0"><strong>Adam Kowalski</strong></p>
+                    <p><small>Zastępca zastępcy prezesa</small></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 </div>
 <style>
     #owners_o_nas_container {
         height: 40vh;
+        width: 1500px;
+        overflow: hidden;
     }
 
     #owners_o_nas_container img {
         height: 100%;
+        width: 100%;
+        object-fit: cover;
     }
 
 
@@ -50,11 +109,15 @@
         #owners_o_nas_container {
             height: 25vh;
         }
+
+        #statut-pdf {
+            height: 500px;
+        }
     }
 
     .rounded-img {
-        height: 100px;
-        width: 100px;
+        height: 150px;
+        width: 150px;
         background-color: #bbb;
         border-radius: 50%;
         display: inline-block;
