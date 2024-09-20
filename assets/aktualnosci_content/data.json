@@ -1,0 +1,23 @@
+{
+    "news" : [
+            {
+                "folder": "wydarzenie1",
+                "title": "Wydarzenie 1",
+                "description_short": "Krótki opis wydarzenia 1",
+                "description_all": "Cały opis wydarzenia 1"
+            },
+            {
+                "folder": "wydarzenie2",
+                "title": "Wydarzenie 2",
+                "description_short": "Krótki opis wydarzenia 2",
+                "description_all": "Cały opis wydarzenia 2"
+            },
+            {
+                "folder": "wydarzenie3",
+                "title": "Wydarzenie 3",
+                "description_short": "Krótki opis wydarzenia 3",
+                "description_all": "Cały opis wydarzenia 3"
+            }
+
+    ]
+}
