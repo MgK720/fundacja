@@ -2,21 +2,24 @@
     "news" : [
             {
                 "folder": "wydarzenie1",
-                "title": "Wydarzenie 1",
-                "description_short": "Krótki opis wydarzenia 1",
-                "description_all": "Cały opis wydarzenia 1"
+                "title": "Lorem event",
+                "description_short": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+                "description_all": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer sed tellus eu turpis auctor porttitor. Duis sit amet odio augue. Fusce non libero lorem. Cras ut semper libero, nec hendrerit ante. Fusce ultricies ipsum nec nisl malesuada, at malesuada ipsum cursus. In ac nibh et leo sagittis porta vitae nec elit. Praesent sit amet lacus nec dolor tempus sollicitudin eu sed diam. In vehicula elit orci, et facilisis velit placerat iaculis. Nulla id justo at orci eleifend luctus quis eget nibh. Suspendisse ac hendrerit ligula. Integer elementum placerat varius. Nulla aliquam purus nunc, quis tincidunt risus fermentum volutpat. Phasellus vitae tincidunt purus, a facilisis eros. Integer dolor lectus, ultrices id congue non, volutpat ut libero. Phasellus et enim at mi vestibulum fringilla.",
+                "imgs_count": 1
             },
             {
                 "folder": "wydarzenie2",
                 "title": "Wydarzenie 2",
                 "description_short": "Krótki opis wydarzenia 2",
-                "description_all": "Cały opis wydarzenia 2"
+                "description_all": "Cały opis wydarzenia 2",
+                "imgs_count": 3
             },
             {
                 "folder": "wydarzenie3",
                 "title": "Wydarzenie 3",
                 "description_short": "Krótki opis wydarzenia 3",
-                "description_all": "Cały opis wydarzenia 3"
+                "description_all": "Cały opis wydarzenia 3",
+                "imgs_count": 1
             }
 
     ]

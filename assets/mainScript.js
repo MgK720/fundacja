@@ -1,53 +1,55 @@
-const newsFolder = "./assets/aktualnosci_content"
+const newsFolder = "./assets/aktualnosci_content";
 
 $(document).ready(function () {
-    $('#navbarSupportedContent .nav-link').click(function () {
-        $('#navbarSupportedContent .nav-link').removeClass('active');
+    const $navbarLinks = $('#navbarSupportedContent .nav-link');
+    const $content = $("#content");
+    const $navbarCollapse = $('.navbar-collapse');
+
+    $navbarLinks.click(function () {
+        $navbarLinks.removeClass('active');
         $(this).addClass('active');
-        let page = $(this).attr("data-page");
-        $("#content").addClass('fade-out');
+        const page = $(this).attr("data-page");
 
-        setTimeout(function () {
-            $.get("data_page_content/" + page + ".html", function (data) {
-                $("#content").html(data);
-            }).done(function () {
-                $("#content").removeClass('fade-out');
+        $content.addClass('fade-out');
 
-                if (page === "aktualnosci") {
-                    console.log("Strona aktualności załadowana");
-                    newsPageScript();
-                }
-            });
+        setTimeout(() => {
+            $.get(`data_page_content/${page}.html`)
+                .done(function (data) {
+                    $content.html(data).removeClass('fade-out');
+
+                    if (page === "aktualnosci") {
+                        console.log("Strona aktualności załadowana");
+                        newsPageScript();
+                    }
+                });
         }, 500);
 
-        $('.navbar-collapse').collapse('hide');
+        $navbarCollapse.collapse('hide');
     });
 
-    $("#content").addClass('fade-out');
-
-    setTimeout(function () {
-        $.get("data_page_content/" + "strona_glowna" + ".html", function (data) {
-            $("#content").html(data);
-        }).done(function () {
-            $("#content").removeClass('fade-out');
-        });
-    }, 500);
+    $content.addClass('fade-out');
+    loadInitialContent();
 });
+
+function loadInitialContent() {
+    setTimeout(() => {
+        $.get("data_page_content/strona_glowna.html")
+            .done(function (data) {
+                $("#content").html(data).removeClass('fade-out');
+            });
+    }, 500);
+}
 
 function newsPageScript() {
     const newsGrid = document.getElementById('news-grid');
-
-    for (let i = 0; i < 4; i++) {
-        const skeletonTile = `
+    const skeletonTiles = Array.from({ length: 4 }, () => `
         <div class="col-lg-3 col-md-6 news-tile loaded">
             <div class="card">
                 <div class="placeholder-glow">
                     <div class="placeholder card-img-top" style="height: 200px; width: 100%;"></div>
                 </div>
                 <div class="card-body">
-                    <h5 class="placeholder-glow">
-                        <span class="placeholder col-6"></span>
-                    </h5>
+                    <h5 class="placeholder-glow"><span class="placeholder col-6"></span></h5>
                     <p class="placeholder-glow">
                         <span class="placeholder col-7"></span>
                         <span class="placeholder col-4"></span>
@@ -57,32 +59,28 @@ function newsPageScript() {
                 </div>
             </div>
         </div>
-        `;
-        newsGrid.innerHTML += skeletonTile;
-    }
+    `).join('');
 
-    fetchNewsData();
+    newsGrid.innerHTML += skeletonTiles;
+    setTimeout(()=>{
+        fetchNewsData();
+    }, 1000)
 }
 
 function fetchNewsData() {
-    fetch(newsFolder + "/data.json")
+    fetch(`${newsFolder}/data.json`)
         .then(response => {
-            if (!response.ok) {
-                throw new Error('Something went wrong');
-            }
+            if (!response.ok) throw new Error('Something went wrong');
             return response.json();
         })
         .then(data => {
             const newsGrid = document.getElementById("news-grid");
-            newsGrid.innerHTML = '';
-
-            data.news.forEach((news, index) => {
-                const newsTile = `
+            newsGrid.innerHTML = data.news.map((news, index) => `
                 <div class="col-lg-3 col-md-6 news-tile true">
                     <div class="card">
                         <img src="${newsFolder}/${news.folder}/image1.jpg" class="card-img-top" alt="${news.title}" loading="lazy">
                         <div class="card-body">
-                            <h5 class="news-title news-show-modal-button">
+                            <h5 class="news-title">
                                 <a href="#" data-bs-toggle="modal" data-bs-target="#newsModal" data-index="${index}" class="link-offset-2 link-offset-3-hover link-underline link-underline-opacity-0 link-underline-opacity-75-hover">
                                 ${news.title}
                                 </a>
@@ -91,9 +89,7 @@ function fetchNewsData() {
                         </div>
                     </div>
                 </div>
-                `;
-                newsGrid.innerHTML += newsTile;
-            });
+            `).join('');
 
             const newsModal = document.getElementById('newsModal');
             newsModal.addEventListener('show.bs.modal', function (event) {
@@ -108,14 +104,12 @@ function fetchNewsData() {
                 modalDescription.textContent = selectedNews.description_all;
 
                 const carouselImages = newsModal.querySelector('#carousel-images');
-                carouselImages.innerHTML = '';
-                for (let i = 1; i <= 3; i++) {
-                    carouselImages.innerHTML += `
-                    <div class="carousel-item ${i === 1 ? 'active' : ''}">
-                        <img src="${newsFolder}/${selectedNews.folder}/image${i}.jpg" class="d-block w-100" alt="Image ${i}">
+                carouselImages.innerHTML = Array.from({ length: selectedNews.imgs_count }, (_, i) => `
+                    <div class="carousel-item ${i === 0 ? 'active' : ''}">
+                        <img src="${newsFolder}/${selectedNews.folder}/image${i + 1}.jpg" class="d-block w-100" alt="Image ${i + 1}">
                     </div>
-                    `;
-                }
+                `).join('');
+
             });
         })
         .catch(error => {
