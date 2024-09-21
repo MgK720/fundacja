@@ -22,7 +22,7 @@ $(document).ready(function () {
                         newsPageScript();
                     }
                 });
-        }, 500);
+        }, 300);
 
         $navbarCollapse.collapse('hide');
     });
@@ -37,34 +37,34 @@ function loadInitialContent() {
             .done(function (data) {
                 $("#content").html(data).removeClass('fade-out');
             });
-    }, 500);
+    }, 300);
 }
 
 function newsPageScript() {
-    const newsGrid = document.getElementById('news-grid');
-    const skeletonTiles = Array.from({ length: 4 }, () => `
-        <div class="col-lg-3 col-md-6 news-tile loaded">
-            <div class="card">
-                <div class="placeholder-glow">
-                    <div class="placeholder card-img-top" style="height: 200px; width: 100%;"></div>
-                </div>
-                <div class="card-body">
-                    <h5 class="placeholder-glow"><span class="placeholder col-6"></span></h5>
-                    <p class="placeholder-glow">
-                        <span class="placeholder col-7"></span>
-                        <span class="placeholder col-4"></span>
-                        <span class="placeholder col-4"></span>
-                        <span class="placeholder col-6"></span>
-                    </p>
-                </div>
-            </div>
-        </div>
-    `).join('');
+    // const newsGrid = document.getElementById('news-grid');
+    // const skeletonTiles = Array.from({ length: 2 }, () => `
+    //     <div class="col-lg-3 col-md-6 news-tile loaded">
+    //         <div class="card">
+    //             <div class="placeholder-glow">
+    //                 <div class="placeholder card-img-top" style="height: 200px; width: 100%;"></div>
+    //             </div>
+    //             <div class="card-body">
+    //                 <h5 class="placeholder-glow"><span class="placeholder col-6"></span></h5>
+    //                 <p class="placeholder-glow">
+    //                     <span class="placeholder col-7"></span>
+    //                     <span class="placeholder col-4"></span>
+    //                     <span class="placeholder col-4"></span>
+    //                     <span class="placeholder col-6"></span>
+    //                 </p>
+    //             </div>
+    //         </div>
+    //     </div>
+    // `).join('');
 
-    newsGrid.innerHTML += skeletonTiles;
+    // newsGrid.innerHTML += skeletonTiles;
     setTimeout(()=>{
         fetchNewsData();
-    }, 1000)
+    }, 300)
 }
 
 function fetchNewsData() {
@@ -76,7 +76,7 @@ function fetchNewsData() {
         .then(data => {
             const newsGrid = document.getElementById("news-grid");
             newsGrid.innerHTML = data.news.map((news, index) => `
-                <div class="col-lg-3 col-md-6 news-tile true">
+                <div class="col-lg-3 col-md-6 news-tile true-card">
                     <div class="card">
                         <img src="${newsFolder}/${news.folder}/image1.jpg" class="card-img-top" alt="${news.title}" loading="lazy">
                         <div class="card-body">
@@ -90,6 +90,13 @@ function fetchNewsData() {
                     </div>
                 </div>
             `).join('');
+
+            const trueCards = document.querySelectorAll('.true-card')
+            setTimeout(()=>{
+                trueCards.forEach(card => {
+                    card.classList.add('true-card-transition')
+                });
+            },1)
 
             const newsModal = document.getElementById('newsModal');
             newsModal.addEventListener('show.bs.modal', function (event) {

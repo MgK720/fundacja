@@ -57,6 +57,26 @@
             padding: 20px;
         }
 
+        .true-card {
+            opacity: 0;
+            transform: translateY(-10px);
+            transition: opacity 0.3s ease, transform 0.3s ease;
+        }
+
+        .true-card-transition {
+            opacity: 0.9;
+            transform: translateY(0);
+        }
+
+        .true-card-transition:hover {
+            opacity: 1;
+            border-width: 2px;
+        }
+
+        .card:hover {
+            border-width: thin;
+        }
+
         @media (max-width: 767px) {
             .modal-body .carousel-inner img {
                 height: 250px;
