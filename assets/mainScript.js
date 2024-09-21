@@ -109,6 +109,7 @@ function fetchNewsData() {
 
                 const modalDescription = newsModal.querySelector('#modal-description');
                 modalDescription.textContent = selectedNews.description_all;
+                modalDescription.innerHTML += `<figure class="text-end mt-4"><blockquote class="blockquote"><p><small>${selectedNews.date}</small></p></blockquote></figure>`
 
                 const carouselImages = newsModal.querySelector('#carousel-images');
                 carouselImages.innerHTML = Array.from({ length: selectedNews.imgs_count }, (_, i) => `

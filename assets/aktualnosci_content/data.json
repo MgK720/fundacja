@@ -5,21 +5,24 @@
                 "title": "Lorem event",
                 "description_short": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
                 "description_all": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer sed tellus eu turpis auctor porttitor. Duis sit amet odio augue. Fusce non libero lorem. Cras ut semper libero, nec hendrerit ante. Fusce ultricies ipsum nec nisl malesuada, at malesuada ipsum cursus. In ac nibh et leo sagittis porta vitae nec elit. Praesent sit amet lacus nec dolor tempus sollicitudin eu sed diam. In vehicula elit orci, et facilisis velit placerat iaculis. Nulla id justo at orci eleifend luctus quis eget nibh. Suspendisse ac hendrerit ligula. Integer elementum placerat varius. Nulla aliquam purus nunc, quis tincidunt risus fermentum volutpat. Phasellus vitae tincidunt purus, a facilisis eros. Integer dolor lectus, ultrices id congue non, volutpat ut libero. Phasellus et enim at mi vestibulum fringilla.",
-                "imgs_count": 1
+                "imgs_count": 1,
+                "date": "21.09.2024"
             },
             {
                 "folder": "wydarzenie2",
                 "title": "Wydarzenie 2",
                 "description_short": "Krótki opis wydarzenia 2",
-                "description_all": "Cały opis wydarzenia 2",
-                "imgs_count": 3
+                "description_all": "Curabitur iaculis mauris sed pulvinar consequat. Cras vel ex malesuada, venenatis ex eu, scelerisque magna. Sed semper, nulla sit amet congue blandit, mauris diam rutrum augue, eu blandit arcu nisl sit amet elit. Fusce cursus risus sit amet lacus tincidunt, vel aliquet elit semper. Nullam posuere convallis augue in consequat. Morbi fermentum felis et sagittis bibendum. Morbi a fringilla massa. Etiam faucibus, dolor varius semper imperdiet, dui elit sollicitudin odio, vel venenatis eros tortor eget diam. Suspendisse commodo urna lacinia lobortis porta. Suspendisse id nunc venenatis, semper magna non, dictum elit. Vestibulum justo mi, molestie in scelerisque quis, consequat ac enim. Morbi laoreet metus ut odio consequat lacinia. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Pellentesque eu lobortis lectus. Maecenas placerat nisi ut ipsum placerat congue. Fusce condimentum pharetra tellus, scelerisque commodo purus.Curabitur iaculis mauris sed pulvinar consequat. Cras vel ex malesuada, venenatis ex eu, scelerisque magna. Sed semper, nulla sit amet congue blandit, mauris diam rutrum augue, eu blandit arcu nisl sit amet elit. Fusce cursus risus sit amet lacus tincidunt, vel aliquet elit semper. Nullam posuere convallis augue in consequat. Morbi fermentum felis et sagittis bibendum. Morbi a fringilla massa. Etiam faucibus, dolor varius semper imperdiet, dui elit sollicitudin odio, vel venenatis eros tortor eget diam. Suspendisse commodo urna lacinia lobortis porta. Suspendisse id nunc venenatis, semper magna non, dictum elit. Vestibulum justo mi, molestie in scelerisque quis, consequat ac enim. Morbi laoreet metus ut odio consequat lacinia. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Pellentesque eu lobortis lectus. Maecenas placerat nisi ut ipsum placerat congue. Fusce condimentum pharetra tellus, scelerisque commodo purus.",
+                "imgs_count": 3,
+                "date": "12.09.2024"
             },
             {
                 "folder": "wydarzenie3",
                 "title": "Wydarzenie 3",
                 "description_short": "Krótki opis wydarzenia 3",
                 "description_all": "Cały opis wydarzenia 3",
-                "imgs_count": 1
+                "imgs_count": 1,
+                "date": "7.09.2024"
             }
 
     ]
